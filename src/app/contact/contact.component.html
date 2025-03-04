@@ -1,0 +1,70 @@
+<app-header></app-header>
+
+<div class="container p-5 bg-warning">
+
+    <h1 class="text-light text-center">Contact Us</h1>
+
+    <p class="text-light mt-4 text-center mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam exercitationem sed atque provident amet autem consequatur, corrupti est rerum, aliquam beatae doloribus! Ex facilis optio aliquid doloribus consequatur, at autem!</p>
+
+</div>
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            <h2 class="mb-4">Get In Touch</h2>  <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quasi odio aperiam! Quasi eius expedita, voluptatibus dolorem corrupti accusantium non perferendis rem eligendi. Excepturi dolorum animi deleniti harum blanditiis eos!</p>
+
+            <div class="mb-4">  <p><i class="fa-solid fa-location-crosshairs fa-2x" style="color: #FFD43B;"></i> <strong class="ms-2">Address</strong>: Kakkanad.</p>
+                <p><i class="fa-solid fa-phone fa-2x" style="color: #FFD43B;"></i> <strong class="ms-2">Phone Number</strong>: 9086754321</p>
+                <p><i class="fa-solid fa-envelope fa-2x" style="color: #FFD43B;"></i> <strong class="ms-2">E Mail</strong>: mail</p>
+            </div>
+
+            <div>  <h4 class="mb-3">Follow Us</h4>  <div>
+                <i class="fa-brands fa-facebook fa-2x me-2" style="color: #FFD43B;"></i>
+                <i class="fa-brands fa-instagram fa-2x me-2" style="color: #FFD43B;"></i>
+                <i class="fa-brands fa-twitter fa-2x me-2" style="color: #FFD43B;"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <form [formGroup]="testimonyForm" (ngSubmit)="addTestimony()">
+                    <h5 class="card-title text-center mb-4">Client Testimony</h5>
+                    
+                        <div class=" mb-4">
+                           
+                            <input name="name" formControlName="name" type="text" class="form-control"  placeholder="name" required>
+                        </div>
+                        <div class=" mb-4">
+                            <input name="email" formControlName="email" type="email" class="form-control" placeholder="email" required>
+                        </div>
+                        <div class=" mb-4">
+                            <textarea name="message" formControlName="message" class="form-control" placeholder="message" rows="3" required></textarea>
+                        </div>
+                        <div class="  mt-5">
+                            
+                            <label class=" mb-4" for="terms">By Submitting, your agreeing the terms and condition of our website.</label>
+                        </div>
+
+                        <div class="d-flex align-items-center justify-content-center">
+                            <button type="submit" class="btn btn-warning">Submit</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+
+<div class="container mb-5"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62865.55832720463!2d76.30948095113635!3d10.008813464705796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080c8e94a07a07%3A0x49921cdfae82660!2sKakkanad%2C%20Kerala!5e0!3m2!1sen!2sin!4v1738734386038!5m2!1sen!2sin" class="w-100" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+
+
+
+
+
+<app-footer></app-footer>

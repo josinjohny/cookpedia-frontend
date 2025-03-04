@@ -1,0 +1,46 @@
+<div class="container-fluid vh-100 d-flex justify-content-center align-items-center bg-light">
+    <div class="row ">
+        
+      <div class="col-md-6 p-5 shadow-lg rounded  bg-white">
+        <div class="text-center mb-3">
+          <h3 class="fw-bold"><i class="fa-solid fa-graduation-cap"></i> Cookpedia</h3>
+        </div>
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+          <div class="mb-3">
+            <input name="username" formControlName="username"  type="text" class="form-control" placeholder="Username">
+           @if (registerForm.get('username')?.errors && registerForm.get('username')?.touched){
+            <div class="text-danger">*Invalid username</div>
+           }
+
+          </div>
+          <div class="mb-3">
+            <input name="email" formControlName="email" type="email" class="form-control" placeholder="E Mail">
+
+            @if (registerForm.get('email')?.errors && registerForm.get('email')?.touched){
+            <p class="text-danger">*Invalid E-mail</p>
+            }
+          </div>
+          <div class="mb-3">
+            
+
+            <input name="password" formControlName="password" type="password" class="form-control" placeholder="Password">
+
+            @if (registerForm.get('password')?.errors && registerForm.get('password')?.touched){
+            <p class="text-danger">*Invalid password</p>
+            }
+          </div>
+          <button type="submit" class="btn btn-warning w-100">Register</button>
+        </form>
+      </div>
+      <div class="col-md-6 p-5  justify-content-center">
+        <h3>Create New Account</h3>
+        <p>What you will get?</p>
+        <ul>
+          <li> Different Recipes</li>
+          <li> Easy way to Make Recipe</li>
+          <li>Save your Favorite Recipes</li>
+          <li> Download your Recipes</li>
+        </ul>
+      </div>
+    </div>
+  </div>

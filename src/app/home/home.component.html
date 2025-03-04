@@ -1,0 +1,105 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row bg-warning p-5">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-4 text-light">
+            <h1 class="fw-bolder">The Easiest Way
+                <br>To Make Your<br>
+                Favorite Meal</h1>
+                <p>Discover 100+ recipes in your hand with the best recipe. Help you to find the easiest way to cook.</p>
+                <a routerLink="/recipes" style="background-color: orange; color: white;" class="btn mt-3">Explore Our Recipes</a>
+
+        </div>
+        <div class="col-lg-6">
+            <img class="w-50 landingImg " style="margin-left: 150px; border-radius: 150px;" src="https://th.bing.com/th/id/R.6c1787e507c532e25b09141afd4378f6?rik=FGh3U82RZkOfpA&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fpng-plate-of-food--1242.png&ehk=zk2vJRaJalXr82NMxF1RT5fA9uhyqnMW5CYNooOuV3Y%3d&risl=&pid=ImgRaw&r=0" alt="">
+        </div>
+    </div>
+
+    <!-- popular Recipe -->
+     <div class="my-5 p-5">
+        <h1>Popular Recipe Of The Week</h1>
+        <p>Our Most Popular Recipes Of The Week</p>
+        <a routerLink="/recipes">View All</a>
+     </div>
+
+     <div class="row my-5">
+        @for (recipes of allRecipes; track $index) {
+            <div class="col-lg-4">
+                <div class="p-3">
+                    <img class="card-img-top" [src]="recipes.image" alt="">
+                    <div class="card-body mt-2">
+                        <h5>{{recipes.name}}</h5>
+                    </div>
+                </div>
+            </div>
+        }
+        
+
+        
+
+     </div>
+
+
+     <!-- Banner -->
+     <div class="row align-items-center my-5" style="background-image: url('https://st2.depositphotos.com/1013886/5744/i/450/depositphotos_57444211-stock-photo-healthy-food-background.jpg'); background-repeat: no-repeat; background-size: cover; height: 400px;">
+
+<div class="col-lg-6 p-5 mt-5 ms-5">
+    <div class="bg-warning rounded p-5 w-75">
+        <h3 class="text-light">50+ Recipes That Are Very Quick And Fast</h3>
+        <p class="text-secondary mt-3">Find the perfect food ideas to start your day with the quick and easiest way</p>
+
+
+    </div>
+
+</div>
+<div class="col-lg-6"></div>
+     </div>
+
+
+     <!-- Download App -->
+      <div style="height: 400px;" class="bg-warning my-5 row align-items-center text-light rounded p-5">
+        <div class="col-lg-6">
+            <img height="320px" src="https://toppng.com/uploads/thumbnail/android-app-on-google-play-11568829115kt4gig8l67.png" alt="">
+
+        </div>
+
+        <div class="col-lg-6 text-center mt-2">
+<h1>Download App</h1>
+<h5>Download the App from App Store or <br>
+    Google Play for a better experience</h5>
+
+    <img width="150px" class="mt-3 me-2" src="https://cdn.freebiesupply.com/logos/large/2x/google-play-download-android-app-logo-svg-vector.svg" alt="">
+    <img width="165px" class="mt-3" src="https://cdn.freebiesupply.com/logos/large/2x/download-on-the-app-store-apple-logo-png-transparent.png" alt="">
+
+
+        </div>
+      </div>
+
+
+      <!-- Testimonals -->
+
+      <div class="text-center my-5">
+        <h1>Client Testimonals</h1>
+        <marquee behavior="" direction="">
+            <div class="d-flex my-5">
+                @for (item of allFeedbackList; track $index) {
+                    <div class="rounded-border w-50 p-3 me-2">
+                        <h5>{{item.name}}</h5>
+                        <p style="white-space: normal; width: 100%; text-align: justify;">{{item.message}}</p>
+
+                    </div>
+                }
+            </div>
+
+        </marquee>
+      </div>
+
+       
+     
+</div>
+
+
+
+
+
+<app-footer></app-footer>

@@ -1,0 +1,71 @@
+<app-header></app-header>
+<div class="container-fluid bg-black mt-3 p-5 rounded-5 w-75">
+    <div class="row">
+        <a style="text-decoration:none;color: wheat;" routerLink="/recipes">Back to recipes</a>
+
+        <div class="col-md-6 ">
+            <img class="img-fluid rounded-5 my-5" [src]="recipe.image" alt="">
+
+            <div class="d-flex justify-content-between">
+                <button (click)="downloadRecipe()"  class="btn btn-success text-capitalize">Download the recipe</button>
+                <button (click)="saveRecipe()" class="btn btn-info text-capitalize text-light">Save the recipe</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3 class="my-5">{{this.recipe.name}}</h3>
+
+            <div class="d-flex justify-content-between my-3">
+                <p class="fw-bolder">Cuisine: {{recipe.cuisine}}</p>
+                <p class="fw-bolder">Serving : {{recipe.cuisine}}</p>
+                <p class="fw-bolder">Mode of cooking {{recipe.difficulty}}</p>
+            </div>
+            <div class="d-flex justify-content-between my-3">
+                <p class="fw-bolder">Duration for cooking: {{recipe.cookTimeMinutes
+                    }} <span>Min</span></p>
+                <p class="fw-bolder">Preparation time: {{recipe.prepTimeMinutes
+                    }} <span>Min</span></p>
+                <p class="fw-bolder">Calories per serving: {{recipe.caloriesPerServing
+                    }}</p>
+            </div>
+
+            <h4>Ingredients : <span>{{this.recipe.Ingredeients}}</span></h4>
+            <ol>
+                @for (item of recipe.ingredients; track $index) {
+
+                <li class="text-capitalize">{{item}}</li>
+                }
+            </ol>
+            <!--  -->
+            <h4>Instructions : <!-- <span>{{this.recipe}}</span> --></h4>
+            <ol>
+                @for (item of recipe.instructions; track $index) {
+
+                <li class="text-capitalize">{{item}}</li>
+                }
+            </ol>
+        </div>
+    </div>
+
+
+    <div class="mt-5">
+        <h1>Related Recipes</h1>
+        <div class="row">
+            @for (item of allRelatedRecipe; track $index) {
+            <div class="col-lg-3 mt-3">
+                <div class="recipe-img p-3">
+                    <img routerLink="/recipe/{{item._id}}/view"  class="card-img-top rounded-5" [src]="item.image" alt="">
+                    <div class="card-body mt-2">
+                        <h5>{{item.name}}</h5>
+                    </div>
+                </div>
+            </div>
+            }
+    
+    
+        </div>
+    </div>
+</div>
+
+
+
+<app-footer></app-footer>

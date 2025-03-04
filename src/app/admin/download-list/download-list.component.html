@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-lg-2">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-lg-10">
+        <h1 class="text-black my-5"> Download List</h1>
+
+        <table class="table my-5 shadow table-responsive">
+
+            <thead>
+                <tr>
+                    <th class="text-center">#</th>
+                    <th class="text-center">Recipe Name</th>
+                    <th class="text-center">Recipe Id</th>
+                    <th class="text-center">Cuisine</th>
+                    <th class="text-center">Recipe Download Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of allDownload; track $index;let i=$index) {
+                    <tr>
+                        <td class="text-center">{{i+1}}</td>
+                        <td class="text-center">{{item.recipeName}}</td>
+                        <td class="text-center">{{item.recipeId}}</td>
+                        <td class="text-center">{{item.recipeCuisine}}</td>
+                        <td class="text-center">{{item.count}}</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>
